@@ -31,7 +31,7 @@ def result():
             
         else: 
             prediction =result[1]
-        return render_template("result.html",prediction = prediction) 
+        return render_template("result.html",prediction = 'Chances of corona positive is{}'.format(prediction)) 
 
 if __name__ == '__main__':
     app.run(debug=True)
