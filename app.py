@@ -27,7 +27,7 @@ def result():
         print(to_predict_list)
         result = ValuePredictor(to_predict_list)         
         if(result[0] >= result[1]): 
-            prediction ='Likely to be corona positive with positive'
+            prediction ='Likely to be corona positive with' +  result[0]*100
         else: 
             prediction ='Likely to be corona negative'            
         return render_template("result.html",prediction = prediction) 
