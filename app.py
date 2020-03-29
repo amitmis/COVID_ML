@@ -18,7 +18,7 @@ def ValuePredictor(to_predict_list):
     result = loaded_model.predict_proba(to_predict) 
     return result[0] 
   
-@app.route('/', methods = ['POST']) 
+@app.route('/result', methods = ['POST']) 
 def result(): 
     if request.method == 'POST': 
         to_predict_list = request.form.to_dict() 
@@ -30,7 +30,7 @@ def result():
         #     prediction ='Income more than 50K'
         # else: 
         #     prediction ='Income less that 50K'            
-        return render_template("result.html",prediction = result) 
+        return render_template("user-symptoms.html",prediction = result) 
 
 if __name__ == '__main__':
     app.run(debug=True,port=5001)
