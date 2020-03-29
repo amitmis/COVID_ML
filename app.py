@@ -26,11 +26,11 @@ def result():
         to_predict_list = list(map(int, to_predict_list)) 
         print(to_predict_list)
         result = ValuePredictor(to_predict_list)         
-        # if int(result)== 1: 
-        #     prediction ='Income more than 50K'
-        # else: 
-        #     prediction ='Income less that 50K'            
-        return render_template("user-symptoms.html",prediction = result) 
+        if(result[0] >= result[1]): 
+            prediction ='Likely to be corona positive with positive'
+        else: 
+            prediction ='Likely to be corona negative'            
+        return render_template("result.html",prediction = prediction) 
 
 if __name__ == '__main__':
     app.run(debug=True)
